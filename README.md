@@ -14,8 +14,15 @@
     "java": {
         "folder": "${tag}\\${id}-${kebab-case-name}",
         "filename": "Solution.${ext}"
+    },
+    "python3": {
+        "folder": "${tag}\\${id}-${kebab-case-name}",
+        "filename": "Solution.${ext}"
     }
 },
+"editor.fontFamily": "Monaco, Consolas, 'Courier New', monospace",
+"editor.fontSize": 13,
+"leetcode.hint.setDefaultLanguage": false,
 ```
 
 ## 说明
