@@ -7,7 +7,8 @@
 // @lc code=start
 class Solution {
     public int removeBoxes(int[] boxes) {
-
+        // i can't solve this problem
+        return -1;
     }
 }
 // @lc code=end
