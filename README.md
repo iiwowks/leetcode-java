@@ -2,6 +2,7 @@
 
 * `vscode + leetcode plugin`
 * `node.js`
+* `IDEA`
 * 在该插件`setting.json`文件的一部分配置
 
 ```json
