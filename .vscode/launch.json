@@ -10,19 +10,6 @@
             "request": "launch",
             "mainClass": "Main",
             "projectName": "leetcode-java_533d50ff"
-        },
-        {
-            "type": "java",
-            "name": "CodeLens (Launch) - main_test",
-            "request": "launch",
-            "mainClass": "main_test",
-            "projectName": "leetcode-java_533d50ff"
-        },
-        {
-            "type": "java",
-            "name": "Debug (Launch) - Current File",
-            "request": "launch",
-            "mainClass": "${file}"
         }
     ]
 }

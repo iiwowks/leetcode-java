@@ -19,7 +19,7 @@ class MyQueue {
 
     /** Push element x to the back of queue. */
     public void push(int x) {
-        if (s1.empty()) { // 若栈1为空，此时front = x;
+        if (s1.isEmpty()) { // 若栈1为空，此时front = x;
             front = x;
         }
         while (!s1.isEmpty()) { // 若栈1非空，将所有元素移动到栈2

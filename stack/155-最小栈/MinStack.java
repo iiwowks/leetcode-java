@@ -30,7 +30,6 @@ class MinStack {
             helper.pop();
             data.pop();
         }
-
     }
     
     public int top() {
