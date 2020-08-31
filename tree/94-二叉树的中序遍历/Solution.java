@@ -1,7 +1,7 @@
 /*
- * @lc app=leetcode.cn id=98 lang=java
+ * @lc app=leetcode.cn id=94 lang=java
  *
- * [98] 验证二叉搜索树
+ * [94] 二叉树的中序遍历
  */
 
 // @lc code=start
@@ -15,26 +15,24 @@
  * }
  */
 class Solution {
-    public boolean isValidBST(TreeNode root) {
-        if (root == null) return true;
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> list = new ArrayList<>();
         Stack<TreeNode> stack = new Stack<>();
-        TreeNode pre = null;
-
+        
+        if (root == null) return list;
         while (root != null || !stack.isEmpty()) {
-            // 所有节点的左分支一列全部进栈
+            // 将左分支进栈
             while (root != null) {
                 stack.push(root);
                 root = root.left;
             }
+            // 从最左下端开始
             root = stack.pop();
-            if (pre != null && root.val <= pre.val) return false;
-            // pre 可以表示为当前节点
-            // pre 也可以表示当前节点的左节点
-            pre = root;
+            list.add(root.val);
+            // 遍历当前节点的右子树
             root = root.right;
         }
-        return true;
-
+        return list;
     }
 }
 // @lc code=end
