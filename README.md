@@ -47,7 +47,7 @@
 * <mark>数学归纳法思维</mark>
 
 ```java
-public void recur(int level, int param) {
+public void recur(int level, int param1, ..., paramN) {
     // 1. 递归终止条件
     if (level > MAX_LEVEL) { return; }
 
@@ -55,7 +55,7 @@ public void recur(int level, int param) {
     process(level, param);
 
     // 3. 下探到下一层（可以剪枝）
-    recur(level + 1, newParam)
+    recur(level + 1, newParam, ..., newParamN)
 
     // 4. 清理当前层（可选）
 }
