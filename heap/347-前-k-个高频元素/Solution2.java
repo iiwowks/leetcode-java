@@ -10,7 +10,7 @@ import java.util.PriorityQueue;
 
 // @lc code=start
 // use maxHeap. Put entry into maxHeap so we can always poll a number with largest frequency
-public class Solution {
+class Solution2 {
     public int[] topKFrequent(int[] nums, int k) {
         Map<Integer, Integer> map = new HashMap<>();
         for(int n: nums){
