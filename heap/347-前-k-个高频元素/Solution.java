@@ -16,7 +16,7 @@ import java.util.PriorityQueue;
  */
 
 // @lc code=start
-class Solution4 {
+class Solution {
     public int[] topKFrequent(int[] nums, int k) {
         // key - value
         Map<Integer, Integer> occurences = new HashMap<Integer, Integer>();
