@@ -3,6 +3,7 @@
         "**/.git": true,
         "**/.idea": true,
         "**/out": true,
+        "**/*.exe": true,
         "**/.gitignore": true
     }
 }
