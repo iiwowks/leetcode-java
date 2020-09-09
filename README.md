@@ -1,9 +1,10 @@
 ## 环境
 
-* `VSCode`
-* `leetcode`、`java extention pack`插件
-* 在该插件`setting.json`文件的一部分配置
-* `IDEA` debug
+* `VSCode`编辑器
+* `java` ：`java extention pack`插件
+* `c++` ：`c++ intellisense`、`c/c++`插件
+* `python` ：`python`插件
+* 插件`leetcode`其中的`setting.json`文件的一部分配置
 
 ```json
 // 用来配置源代码文件存放目录及文件名
@@ -38,7 +39,7 @@
 
 - [x] <mark>每天提交20次以上</mark>
 - [ ] **2020年 solve 500 道题，提交2000次**
-- [ ] 每个农名都有一个大厂梦————淦！！！
+- [ ] <mark>每个农名都有一个大厂梦————淦！！！</mark>
 
 
 > 注意：这个repo是我2020年8月毕业在家记录刷题而创建的，题解和代码大部分都可以在官网上找到。创建repo的目的在于记录
@@ -47,9 +48,11 @@
 
 ## 递归
 
-* <mark>把自己的状态带到下一层，之后又把改变带回来。环境其它属性、方法不受影响</mark>
-* <mark>寻找**最近重复子问题**</mark>
-* <mark>数学归纳法思维</mark>
+* 把自己的状态带到下一层，之后又把改变带回来。环境其它属性、方法不受影响
+* 寻找**最近重复子问题**
+* **最近重复性**
+* 最优重复性
+* 数学归纳法思维
 
 ```java
 public void recur(int level, int param1, ..., paramN) {
@@ -66,10 +69,54 @@ public void recur(int level, int param1, ..., paramN) {
 }
 ```
 
+## 分治
+
+```cpp
+int divide_conquer(Problem *problem, int params) {
+  // 1. recursion terminator
+  if (problem == nullptr) { // 无子问题
+    process_result
+    return return_result;
+  }
+
+  // 2. process current problem
+  subproblems = split_problem(problem, data)
+  // 2.5. conquer subproblems
+  subresult1 = divide_conquer(subproblem[0], p1)
+  subresult2 = divide_conquer(subproblem[1], p1)
+  subresult3 = divide_conquer(subproblem[2], p1)
+  ...
+
+  // 3. merge
+  result = process_result(subresult1, subresult2, subresult3)
+  // 4. revert the current level status
+
+  return 0;
+}
+```
+
+```java
+private static int divide_conquer(Problem problem, ) {
+  
+  if (problem == NULL) {
+    int res = process_last_result();
+    return res;
+  }
+  subProblems = split_problem(problem)
+  
+  res0 = divide_conquer(subProblems[0])
+  res1 = divide_conquer(subProblems[1])
+  
+  result = process_result(res0, res1); // 组合子结果
+  
+  return result;
+}
+```
+
 ## 回溯
 
-* <mark>回溯算法是一种遍历算法，以**深度优先遍历**的方式尝试所有可能性，是**有方向地**搜索</mark>
-* <mark>不断尝试，直到不能尝试为止，回退到上一步，继续尝试。</mark>
+* 回溯算法是一种遍历算法，以**深度优先遍历**的方式尝试所有可能性，是**有方向地**搜索
+* 不断尝试，直到不能尝试为止，回退到上一步，继续尝试。
 
 ## 深度优先遍历
 
@@ -243,3 +290,21 @@ class Solution {
     }
 }
 ```
+
+## 数学
+
+### 牛顿迭代法求平方根
+
+```java
+int mysqrt(int x){
+    double tmpx = x;
+    double k = 1.0;
+    double k0 = 0.0;
+    while(abs(k0-k) >= 1){
+        k0 = k;
+        k = (k + tmpx/k)/2;
+    }
+    return (int)k;
+}
+```
+
