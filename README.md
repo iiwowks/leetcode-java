@@ -1,9 +1,9 @@
 ## 环境
 
 * `VSCode`编辑器
-* `java` ：`java extention pack`插件
-* `c++` ：`c++ intellisense`、`c/c++`插件
-* `python` ：`python`插件
+* `java` ：`java extention pack`插件、`jdk 13.0.2`
+* `c++` ：`c++ intellisense`、`c/c++`插件、`mingw64`
+* `python` ：`python`插件、`python 3.8.1`
 * 插件`leetcode`其中的`setting.json`文件的一部分配置
 
 ```json
@@ -18,6 +18,10 @@
         "filename": "Solution.${ext}"
     },
     "python3": {
+        "folder": "${tag}\\${id}-${kebab-case-name}",
+        "filename": "Solution.${ext}"
+    },
+    "cpp": {
         "folder": "${tag}\\${id}-${kebab-case-name}",
         "filename": "Solution.${ext}"
     }
@@ -46,7 +50,7 @@
 
 # 算法模板
 
-## 递归
+## 递归模板
 
 * 把自己的状态带到下一层，之后又把改变带回来。环境其它属性、方法不受影响
 * 寻找**最近重复子问题**
@@ -69,46 +73,27 @@ public void recur(int level, int param1, ..., paramN) {
 }
 ```
 
-## 分治
-
-```cpp
-int divide_conquer(Problem *problem, int params) {
-  // 1. recursion terminator
-  if (problem == nullptr) { // 无子问题
-    process_result
-    return return_result;
-  }
-
-  // 2. process current problem
-  subproblems = split_problem(problem, data)
-  // 2.5. conquer subproblems
-  subresult1 = divide_conquer(subproblem[0], p1)
-  subresult2 = divide_conquer(subproblem[1], p1)
-  subresult3 = divide_conquer(subproblem[2], p1)
-  ...
-
-  // 3. merge
-  result = process_result(subresult1, subresult2, subresult3)
-  // 4. revert the current level status
-
-  return 0;
-}
-```
+## 分治模板
 
 ```java
 private static int divide_conquer(Problem problem, ) {
-  
+  // 1. recursion terminator
   if (problem == NULL) {
     int res = process_last_result();
     return res;
   }
+
+  // 2. process current problem
   subProblems = split_problem(problem)
   
+  // 2.5. conquer subproblems
   res0 = divide_conquer(subProblems[0])
   res1 = divide_conquer(subProblems[1])
   
+  // 3. merge
   result = process_result(res0, res1); // 组合子结果
   
+  // 4. revert the current level status
   return result;
 }
 ```
@@ -118,15 +103,144 @@ private static int divide_conquer(Problem problem, ) {
 * 回溯算法是一种遍历算法，以**深度优先遍历**的方式尝试所有可能性，是**有方向地**搜索
 * 不断尝试，直到不能尝试为止，回退到上一步，继续尝试。
 
-## 深度优先遍历
+## DFS模板
 
-- **可以画成树形结构**
-- **状态**: 每个结点表示了求解问题的不同阶段
-- 回到上一层结点时需**状态重置**
-  - 通常可以使用以下的**状态变量：**
-    - 递归到第几层 `depth`
-    - 递归路径 `path`
-    - 布尔数组 `used`
+![algorithm-dfs](https://i.loli.net/2020/09/09/eRgmIjpVhB5D6qT.png)
+
+```python
+visited = set()
+# 递归版本
+def dfs(node, visited):
+    if node in visited: # terminator
+        # already visited
+        return
+    visited.add(node)
+    # process current node here.
+    ...
+    for next_node in node.children():
+        if next_node not in visited:
+            dfs(next_node, visited)
+
+# 非递归版本
+def DFS(self, root):
+
+    if tree.root is None:
+    return []
+    visited, stack = [], [root]
+    while stack:
+        node = stack.pop()
+        visited.add(node)
+        process (node)
+        # 生成相关的节点
+        nodes = generate_related_nodes(node)
+        stack.push(nodes)
+    # other processing work
+    ...
+```
+
+```java
+void dfs(TreeNode root) {
+    if (root == null) {
+        return;
+    }
+    dfs(root.left);
+    dfs(root.right);
+}
+```
+
+```java
+// 状态: 每个结点表示了求解问题的不同阶段
+// 回到上一层结点时需**状态重置**
+// 通常可以使用以下的**状态变量：**
+// 递归到第几层 `depth`  递归路径 `path`  布尔数组 `used`
+
+public List<List<Integer>> levelOrder(TreeNode root) {
+    List<List<Integer>> allResults = new ArrayList<>();
+    if(root == null) {
+        return allResults;
+    }
+    travel(root, 0, allResults);
+    return allResults;
+}
+private void travel(TreeNode root, int level, List<List<Integer>> results) {
+    if(results.size() == level) {
+        results.add(new ArrayList<>());
+    }
+    results.get(level).add(root.val);
+    if(root.left != null){
+        travel(root.left, level + 1, results);
+    }
+    if(root.right != null){
+        travel(root.right, level + 1, results);
+    }
+}
+```
+
+## BFS模板
+
+![algorithm-bfs](https://i.loli.net/2020/09/09/R9o6buwtjcaMfdP.png)
+
+![algorithm-bfs-queue](https://i.loli.net/2020/09/09/n9ZAc62mhibNWkd.gif)
+
+```python
+def BFS(root):
+    visited = set()
+    queue = []
+    queue.append([root])
+
+    while queue:
+        node = queue.pop()
+        visited.add(node)
+
+        process(node)
+        nodes = generate_related_nodes(node)
+        queue.push(nodes)
+
+    # other processing work
+```
+
+```java
+void bfs(TreeNode root) {
+    Queue<TreeNode> queue = new ArrayDeque<>();
+    queue.add(root);
+    while (!queue.isEmpty()) {
+        TreeNode node = queue.poll(); // Java 的 pop 写作 poll()
+        if (node.left != null) {
+            queue.add(node.left);
+        }
+        if (node.right != null) {
+            queue.add(node.right);
+        }
+    }
+}
+```
+
+```java
+public List<List<Integer>> levelOrder(TreeNode root) {
+    List<List<Integer>> allResults = new ArrayList<>();
+    if (root == null) {
+        return allResults;
+    }
+    Queue<TreeNode> nodes = new LinkedList<>();
+    nodes.add(root);
+    while (!nodes.isEmpty()) {
+        int size = nodes.size();
+        List<Integer> results = new ArrayList<>();
+        for (int i = 0; i < size; i++) {
+            TreeNode node = nodes.poll();
+            results.add(node.val);
+            if (node.left != null) {
+                nodes.add(node.left);
+            }
+            if (node.right != null) {
+                nodes.add(node.right);
+            }
+        }
+        allResults.add(results);
+    }
+    return allResults;
+}
+```
 
 ## topK 问题
 
@@ -308,3 +422,6 @@ int mysqrt(int x){
 }
 ```
 
+### 摩尔投票法
+
+* 遇到符合要求的 `+ 1`；不合要求的` - 1`，看最后剩下的数字
