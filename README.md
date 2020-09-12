@@ -26,8 +26,8 @@
         "filename": "Solution.${ext}"
     }
 },
-"editor.fontFamily": "Monaco, Consolas, 'Courier New', monospace",
-"editor.fontSize": 13,
+"editor.fontFamily": "Consolas, Fira Code, 'Courier New', monospace",
+"editor.fontLigatures": true,
 "leetcode.hint.setDefaultLanguage": false,
 ```
 
@@ -159,19 +159,19 @@ public List<List<Integer>> levelOrder(TreeNode root) {
     if(root == null) {
         return allResults;
     }
-    travel(root, 0, allResults);
+    dfs(root, 0, allResults);
     return allResults;
 }
-private void travel(TreeNode root, int level, List<List<Integer>> results) {
+private dfs(TreeNode root, int level, List<List<Integer>> results) {
     if(results.size() == level) {
         results.add(new ArrayList<>());
     }
     results.get(level).add(root.val);
     if(root.left != null){
-        travel(root.left, level + 1, results);
+        dfs(root.left, level + 1, results);
     }
     if(root.right != null){
-        travel(root.right, level + 1, results);
+        dfs(root.right, level + 1, results);
     }
 }
 ```
@@ -241,6 +241,35 @@ public List<List<Integer>> levelOrder(TreeNode root) {
     return allResults;
 }
 ```
+
+## 贪心算法
+
+贪心算法是在每一步选择中都采取在当前状态下最好或最优（最有利）的选择，从而希望导致结果是全局最好或最优的算法。
+
+* **贪心：当下做局部最优判断**
+* **回溯：能够回退**
+* **动态规划：最优判断 + 回退**
+
+## 二分查找模板
+
+```java
+public int binarySearch(int[] array, int target) {
+    int left = 0, right = array.length - 1, mid;
+    while (left <= right) {
+        mid = (right - left) / 2 + left;
+        if (array[mid] == target) {
+            return mid;
+        } else if (array[mid] > target) {
+            right = mid - 1;
+        } else {
+            left = mid + 1;
+        }
+    }
+    return -1;
+}
+```
+
+
 
 ## topK 问题
 
