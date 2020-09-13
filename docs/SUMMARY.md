@@ -14,11 +14,11 @@
 ## contest
 
 * [leetcode](contest/leetcode/README.md)
-  * [weekly contest](contest/leetcode/weekly-contest.md)
-  * [biweekly contest](contest/leetcode/biweekly-contest.md)
+  * [weekly contest](contest/leetcode/weekly-contest/README.md)
+    * [leetcode\_contest\_2020\_fall](contest/leetcode/weekly-contest/leetcode_contest_2020_fall.md)
+    * [weekly contest 206](contest/leetcode/weekly-contest/weekly-contest-206.md)
+    * [weekly contest 205](contest/leetcode/weekly-contest/weekly-contest-205.md)
+  * [biweekly contest](contest/leetcode/biweekly-contest/README.md)
+    * [biweekly contest 34](contest/leetcode/biweekly-contest/biweekly-contest-34.md)
 * [codeforces](contest/codeforces.md)
-
-## problems
-
-* [leetcode题集](problems/leetcode-ti-ji.md)
 
