@@ -5,6 +5,7 @@
         "**/out": true,
         "**/*.exe": true,
         "**/.gitignore": true,
-        "**/LICENSE": true
+        "**/LICENSE": true,
+        "**/.gitbook.yaml": true
     }
 }
