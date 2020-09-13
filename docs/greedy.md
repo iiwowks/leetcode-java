@@ -1,3 +1,5 @@
+# greedy
+
 ## 贪心算法
 
 贪心算法是在每一步选择中都采取在当前状态下最好或最优（最有利）的选择，从而希望导致结果是全局最好或最优的算法。
@@ -24,3 +26,4 @@ public int binarySearch(int[] array, int target) {
     return -1;
 }
 ```
+

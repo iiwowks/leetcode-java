@@ -1,4 +1,4 @@
-## DFS模板
+# DFS模板
 
 ![algorithm-dfs](https://i.loli.net/2020/09/09/eRgmIjpVhB5D6qT.png)
 
@@ -70,3 +70,4 @@ private dfs(TreeNode root, int level, List<List<Integer>> results) {
     }
 }
 ```
+

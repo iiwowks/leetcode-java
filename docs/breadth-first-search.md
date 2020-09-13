@@ -1,4 +1,4 @@
-## BFS模板
+# BFS模板
 
 ![algorithm-bfs](https://i.loli.net/2020/09/09/R9o6buwtjcaMfdP.png)
 
@@ -63,3 +63,4 @@ public List<List<Integer>> levelOrder(TreeNode root) {
     return allResults;
 }
 ```
+
