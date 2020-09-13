@@ -1,10 +1,10 @@
 ## 环境
 
-* `VSCode`编辑器
+* `VSCode`编辑器 + `leetcode`插件
 * `java` ：`java extention pack`插件、`jdk 13.0.2`
 * `c++` ：`c++ intellisense`、`c/c++`插件、`mingw64`
 * `python` ：`python`插件、`python 3.8.1`
-* 插件`leetcode`其中的`setting.json`文件的一部分配置
+* `leetcode`其中的`setting.json`文件的一部分配置
 
 ```json
 // 用来配置源代码文件存放目录及文件名
@@ -43,7 +43,3 @@
 
 - [x] <mark>每天提交20次以上</mark>
 - [ ] **2020年 solve 500 道题，提交2000次**
-- [ ] <mark>每个农名都有一个大厂梦————淦！！！</mark>
-
-
-> 注意：这个repo是我2020年8月毕业在家记录刷题而创建的，题解和代码大部分都可以在官网上找到。创建repo的目的在于记录
