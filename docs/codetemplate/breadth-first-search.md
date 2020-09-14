@@ -4,23 +4,8 @@
 
 ![algorithm-bfs-queue](https://i.loli.net/2020/09/09/n9ZAc62mhibNWkd.gif)
 
-```python
-def BFS(root):
-    visited = set()
-    queue = []
-    queue.append([root])
-
-    while queue:
-        node = queue.pop()
-        visited.add(node)
-
-        process(node)
-        nodes = generate_related_nodes(node)
-        queue.push(nodes)
-
-    # other processing work
-```
-
+{% tabs %}
+{% tab title="Java"%}
 ```java
 void bfs(TreeNode root) {
     Queue<TreeNode> queue = new ArrayDeque<>();
@@ -36,7 +21,8 @@ void bfs(TreeNode root) {
     }
 }
 ```
-
+{% endtab %}
+{% tab title="Java"%}
 ```java
 public List<List<Integer>> levelOrder(TreeNode root) {
     List<List<Integer>> allResults = new ArrayList<>();
@@ -63,4 +49,23 @@ public List<List<Integer>> levelOrder(TreeNode root) {
     return allResults;
 }
 ```
+{% endtab %}
+{% tab title="Python" %}
+```python
+def BFS(root):
+    visited = set()
+    queue = []
+    queue.append([root])
 
+    while queue:
+        node = queue.pop()
+        visited.add(node)
+
+        process(node)
+        nodes = generate_related_nodes(node)
+        queue.push(nodes)
+
+    # other processing work
+```
+{% endtab %}
+{% endtabs %}

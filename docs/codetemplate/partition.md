@@ -23,3 +23,4 @@ private static int divide_conquer(Problem problem, ) {
 }
 ```
 
+![image](/assets/algorithm-recursion.png)

@@ -2,6 +2,53 @@
 
 ![algorithm-dfs](https://i.loli.net/2020/09/09/eRgmIjpVhB5D6qT.png)
 
+{% tabs %}
+{% tab title="Java"%}
+
+```java
+// 状态: 每个结点表示了求解问题的不同阶段
+// 回到上一层结点时需**状态重置**
+// 通常可以使用以下的**状态变量：**
+// 递归到第几层 `depth`  递归路径 `path`  布尔数组 `used`
+
+public List<List<Integer>> levelOrder(TreeNode root) {
+    List<List<Integer>> allResults = new ArrayList<>();
+    if(root == null) {
+        return allResults;
+    }
+    dfs(root, 0, allResults);
+    return allResults;
+}
+private dfs(TreeNode root, int level, List<List<Integer>> results) {
+    if(results.size() == level) {
+        results.add(new ArrayList<>());
+    }
+    results.get(level).add(root.val);
+    if(root.left != null){
+        dfs(root.left, level + 1, results);
+    }
+    if(root.right != null){
+        dfs(root.right, level + 1, results);
+    }
+}
+```
+
+{% endtab %}
+{% tab title="Java"%}
+
+```java
+void dfs(TreeNode root) {
+    if (root == null) {
+        return;
+    }
+    dfs(root.left);
+    dfs(root.right);
+}
+```
+
+{% endtab %}
+{% tab title="Python"%}
+
 ```python
 visited = set()
 # 递归版本
@@ -33,41 +80,5 @@ def DFS(self, root):
     ...
 ```
 
-```java
-void dfs(TreeNode root) {
-    if (root == null) {
-        return;
-    }
-    dfs(root.left);
-    dfs(root.right);
-}
-```
-
-```java
-// 状态: 每个结点表示了求解问题的不同阶段
-// 回到上一层结点时需**状态重置**
-// 通常可以使用以下的**状态变量：**
-// 递归到第几层 `depth`  递归路径 `path`  布尔数组 `used`
-
-public List<List<Integer>> levelOrder(TreeNode root) {
-    List<List<Integer>> allResults = new ArrayList<>();
-    if(root == null) {
-        return allResults;
-    }
-    dfs(root, 0, allResults);
-    return allResults;
-}
-private dfs(TreeNode root, int level, List<List<Integer>> results) {
-    if(results.size() == level) {
-        results.add(new ArrayList<>());
-    }
-    results.get(level).add(root.val);
-    if(root.left != null){
-        dfs(root.left, level + 1, results);
-    }
-    if(root.right != null){
-        dfs(root.right, level + 1, results);
-    }
-}
-```
-
+{% endtab %}
+{% endtabs %}
