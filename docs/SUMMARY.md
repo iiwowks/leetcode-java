@@ -10,15 +10,13 @@
   * [数学](codetemplate/math.md)
   * [topK 问题](codetemplate/topk-problem.md)
   * [DFS模板](codetemplate/depth-first-search.md)
+  * [动态规划模板](codetemplate/dynamic-programming.md)
 
 ## contest
 
 * [leetcode](contest/leetcode/README.md)
-  * [weekly contest](contest/leetcode/weekly-contest/README.md)
-    * [leetcode\_contest\_2020\_fall](contest/leetcode/weekly-contest/leetcode_contest_2020_fall.md)
-    * [weekly contest 206](contest/leetcode/weekly-contest/weekly-contest-206.md)
-    * [weekly contest 205](contest/leetcode/weekly-contest/weekly-contest-205.md)
-  * [biweekly contest](contest/leetcode/biweekly-contest/README.md)
-    * [biweekly contest 34](contest/leetcode/biweekly-contest/biweekly-contest-34.md)
-* [codeforces](contest/codeforces.md)
-
+  * [leetcode\_contest\_2020\_fall](contest/leetcode/leetcode_contest_2020_fall.md)
+  * [weekly contest 206](contest/leetcode/weekly-contest-206.md)
+  * [weekly contest 205](contest/leetcode/weekly-contest-205.md)
+  * [biweekly contest 34](contest/leetcode/biweekly-contest-34.md)
+* [codeforces](contest/codeforces/README.md)

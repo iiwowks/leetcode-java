@@ -49,6 +49,7 @@ class Solution {
                 if (!visited[newi][newj]) {
                     boolean flag = check(board, visited, newi, newj, s, k + 1);
                     if (flag) {
+                        // 这个地方不可以直接retur true; 需要状态重置后才可以return
                         result = true;
                         break;
                     }
@@ -58,6 +59,5 @@ class Solution {
         visited[i][j] = false; // 状态重置
         return result;
     }
-
 }
 // @lc code=end
