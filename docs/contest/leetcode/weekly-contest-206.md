@@ -1,2 +1,0 @@
-# weekly contest 206
-
