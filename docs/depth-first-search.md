@@ -4,7 +4,6 @@
 
 {% tabs %}
 {% tab title="Java"%}
-
 ```java
 // 状态: 每个结点表示了求解问题的不同阶段
 // 回到上一层结点时需**状态重置**
@@ -32,23 +31,8 @@ private dfs(TreeNode root, int level, List<List<Integer>> results) {
     }
 }
 ```
-
-{% endtab %}
-{% tab title="Java"%}
-
-```java
-void dfs(TreeNode root) {
-    if (root == null) {
-        return;
-    }
-    dfs(root.left);
-    dfs(root.right);
-}
-```
-
 {% endtab %}
 {% tab title="Python"%}
-
 ```python
 visited = set()
 # 递归版本
@@ -79,6 +63,5 @@ def DFS(self, root):
     # other processing work
     ...
 ```
-
 {% endtab %}
 {% endtabs %}

@@ -12,6 +12,5 @@ class Solution {
             stack.push(result);
             return last;
         }
-
     }
 }
