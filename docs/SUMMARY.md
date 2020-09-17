@@ -9,6 +9,7 @@
 * [贪心算法](greedy.md)
 * [动态规划模板](dynamic-programming.md)
 * [字典树模板](trie.md)
+* [并查集模板](union-find.md)
 * [数学](math.md)
 * [topK 问题](topk-problem.md)
 

@@ -1,8 +1,6 @@
 # BFS模板
 
-![algorithm-bfs](https://i.loli.net/2020/09/09/R9o6buwtjcaMfdP.png)
-
-![algorithm-bfs-queue](https://i.loli.net/2020/09/09/n9ZAc62mhibNWkd.gif)
+![algorithm-bfs-queue](/assets/algorithm-bfs-queue.gif)
 
 {% tabs %}
 {% tab title="Java"%}
