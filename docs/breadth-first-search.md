@@ -5,7 +5,8 @@
 {% tabs %}
 {% tab title="Java"%}
 ```java
-void bfs(TreeNode root) {
+// 写法一：
+public void bfs(TreeNode root) {
     Queue<TreeNode> queue = new ArrayDeque<>();
     queue.add(root);
     while (!queue.isEmpty()) {
@@ -18,10 +19,7 @@ void bfs(TreeNode root) {
         }
     }
 }
-```
-{% endtab %}
-{% tab title="Java"%}
-```java
+// 写法二：
 public List<List<Integer>> levelOrder(TreeNode root) {
     List<List<Integer>> allResults = new ArrayList<>();
     if (root == null) {

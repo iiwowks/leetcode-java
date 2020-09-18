@@ -3,11 +3,11 @@
  *
  * [69] x 的平方根
  * 返回x的平方根，返回类型是整数，结果只保留整数部分，小数部分舍去
+ * // 解题思路：牛顿法
  */
 
 // @lc code=start
-
-public class Solution {
+class Solution {
 
     public int mySqrt(int a) {
         long x = a;
@@ -17,6 +17,4 @@ public class Solution {
         return (int) x;
     }
 }
-
-
 // @lc code=end

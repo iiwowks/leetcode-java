@@ -26,8 +26,7 @@
         "filename": "Solution.${ext}"
     }
 },
-"editor.fontFamily": "Consolas, Fira Code, 'Courier New', monospace",
-"editor.fontLigatures": true,
+"leetcode.endpoint": "leetcode-cn",
 "leetcode.hint.setDefaultLanguage": false,
 ```
 
@@ -35,11 +34,11 @@
 
 这个repo主要是自己练手用，几天不做题，就容易手生。
 
-- [x] **一题多解，一题多遍**
-- [x] 做题时**注释**很重要，尽量多写注释
-- [x] 不要太重视解题代码，**解题的思路才是关键**
+* [x] **一题多解，一题多遍**
+* [x] 做题时**注释**很重要，尽量多写注释
+* [x] 不要太重视解题代码，**解题的思路才是关键**
 
 ## 目标
 
-- [x] 每天提交20次以上
-- [ ] **2020年 solve 500 道题，提交2000次**
+* [x] 每天提交20次以上
+* [ ] **2020年 solve 500 道题，提交2000次**

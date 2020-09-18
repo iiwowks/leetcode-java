@@ -12,7 +12,7 @@ class Solution {
         boolean[][] visited = new boolean[h][w];
         for (int i = 0; i < h; i++) {
             for (int j = 0; j < w; j++) {
-                boolean flag = check(board, visited, i, j, word, 0);
+                boolean flag = dfs(board, visited, i, j, word, 0);
                 if (flag) {
                     return true;
                 }
@@ -32,7 +32,7 @@ class Solution {
      * @param s
      * @return
      */
-    public boolean check(char[][] board, boolean[][] visited, int i, int j, String s, int k) {
+    public boolean dfs(char[][] board, boolean[][] visited, int i, int j, String s, int k) {
         if (board[i][j] != s.charAt(k)) {
             return false;
         } else if (k == s.length() - 1) {
@@ -47,7 +47,7 @@ class Solution {
             if (newi >= 0 && newi < board.length && newj >= 0 && newj < board[0].length) {
 
                 if (!visited[newi][newj]) {
-                    boolean flag = check(board, visited, newi, newj, s, k + 1);
+                    boolean flag = dfs(board, visited, newi, newj, s, k + 1);
                     if (flag) {
                         // 这个地方不可以直接retur true; 需要状态重置后才可以return
                         result = true;

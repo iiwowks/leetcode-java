@@ -1,13 +1,13 @@
 # DFS模板
 
+* 状态: 每个结点表示了求解问题的不同阶段
+* 回到上一层结点时需**状态重置**
+* 通常可以使用以下的**状态变量：**
+* 递归到第几层 `depth`  递归路径 `path`  布尔数组 `used`
+
 {% tabs %}
 {% tab title="Java" %}
 ```java
-// 状态: 每个结点表示了求解问题的不同阶段
-// 回到上一层结点时需**状态重置**
-// 通常可以使用以下的**状态变量：**
-// 递归到第几层 `depth`  递归路径 `path`  布尔数组 `used`
-
 public List<List<Integer>> levelOrder(TreeNode root) {
     List<List<Integer>> allResults = new ArrayList<>();
     if(root == null) {
