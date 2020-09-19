@@ -5,7 +5,7 @@
 * `find(x)`: 找到元素`x`所在集合的**代表**，该操作也可以用于判断两个元素是否位于同一个集合，比较各自的代表
 
 {% tabs %}
-{% tab title="Java"%}
+{% tab title="Java" %}
 ```java
 class UnionFind {
     private int count = 0; // 集合size
@@ -43,6 +43,7 @@ class UnionFind {
 }
 ```
 {% endtab %}
+
 {% tab title="Python" %}
 ```python
 def init(p):
@@ -67,3 +68,4 @@ def parent(self, p, i):
 ```
 {% endtab %}
 {% endtabs %}
+

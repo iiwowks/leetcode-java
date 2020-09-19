@@ -1,6 +1,6 @@
 # 递归模板
 
-![image-recursion](/assets/algorithm-recursion.png)
+![image-recursion](../.gitbook/assets/algorithm-recursion.png)
 
 * 把自己的状态带到下一层，之后又把改变带回来。环境其它属性、方法不受影响
 * 寻找**最近重复子问题**
@@ -26,6 +26,4 @@ public void recur(int level, int param1, ..., paramN) {
 ```
 {% endtab %}
 {% endtabs %}
-
-
 

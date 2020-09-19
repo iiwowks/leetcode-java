@@ -30,6 +30,7 @@ private dfs(TreeNode root, int level, List<List<Integer>> results) {
 }
 ```
 {% endtab %}
+
 {% tab title="Python" %}
 ```python
 visited = set()
@@ -63,3 +64,4 @@ def DFS(self, root):
 ```
 {% endtab %}
 {% endtabs %}
+

@@ -4,7 +4,7 @@
 
 _求前K大、前K小、第K大、第K小问题，有四种方法：_
 
-## **O(n): 快速排序**
+## **O\(n\): 快速排序**
 
 ```java
 class Solution {
@@ -47,7 +47,7 @@ class Solution {
 }
 ```
 
-## **O(nlogK): 大根堆（前k小）、小根堆（前k大）**
+## **O\(nlogK\): 大根堆（前k小）、小根堆（前k大）**
 
 **`java`中的`PriorityQueue`（默认小根堆）**
 
@@ -83,7 +83,7 @@ class Solution {
 }
 ```
 
-## **O(nlogK): 二叉搜索树**
+## **O\(nlogK\): 二叉搜索树**
 
 ```java
 class Solution {
@@ -130,7 +130,7 @@ class Solution {
 }
 ```
 
-## **计数排序 O(n)**
+## **计数排序 O\(n\)**
 
 ```java
 class Solution {
@@ -158,3 +158,4 @@ class Solution {
     }
 }
 ```
+

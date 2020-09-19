@@ -1,4 +1,4 @@
-# 字典树
+# 字典树模板
 
 ```java
 public class TrieNode {

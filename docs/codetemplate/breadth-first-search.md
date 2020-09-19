@@ -1,9 +1,9 @@
 # BFS模板
 
-![algorithm-bfs-queue](/assets/algorithm-bfs-queue.gif)
+![algorithm-bfs-queue](../.gitbook/assets/algorithm-bfs-queue.gif)
 
 {% tabs %}
-{% tab title="Java"%}
+{% tab title="Java" %}
 ```java
 // 写法一：
 public void bfs(TreeNode root) {
@@ -46,6 +46,7 @@ public List<List<Integer>> levelOrder(TreeNode root) {
 }
 ```
 {% endtab %}
+
 {% tab title="Python" %}
 ```python
 def BFS(root):
@@ -65,3 +66,4 @@ def BFS(root):
 ```
 {% endtab %}
 {% endtabs %}
+
