@@ -1,6 +1,6 @@
 # BFS模板
 
-![algorithm-bfs-queue](../.gitbook/assets/algorithm-bfs-queue.gif)
+![algorithm-bfs-queue](/assets/algorithm-bfs-queue.gif)
 
 {% tabs %}
 {% tab title="Java" %}
