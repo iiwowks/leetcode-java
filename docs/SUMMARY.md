@@ -4,7 +4,6 @@
 
 ## 模板 <a id="codetemplate"></a>
 
-* [welcome](codetemplate/readme.md)
 * [递归模板](codetemplate/recursion.md)
 * [回溯](codetemplate/backtracking.md)
 * [分治模板](codetemplate/partition.md)
@@ -16,6 +15,7 @@
 * [并查集模板](codetemplate/union-find.md)
 * [数学](codetemplate/math.md)
 * [topK 问题](codetemplate/topk-problem.md)
+* [启发式搜索(A*)](codetemplate/heuristic-search.md)
 
 ## 题集 <a id="problem-list"></a>
 

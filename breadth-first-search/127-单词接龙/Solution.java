@@ -6,61 +6,85 @@
 
 // @lc code=start
 class Solution {
+
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+        // 第 1 步：先将 wordList 放到哈希表里，便于判断某个单词是否在 wordList 里
+        Set<String> wordSet = new HashSet<>(wordList);
+        if (wordSet.size() == 0 || !wordSet.contains(endWord)) {
+            return 0;
+        }
 
-        // Since all words are of same length.
-        int L = beginWord.length();
+        // 第 2 步：已经访问过的 word 添加到 visited 哈希表里
+        Set<String> visited = new HashSet<>();
+        // 分别用左边和右边扩散的哈希表代替单向 BFS 里的队列，它们在双向 BFS 的过程中交替使用
+        Set<String> beginVisited = new HashSet<>();
+        beginVisited.add(beginWord);
+        Set<String> endVisited = new HashSet<>();
+        endVisited.add(endWord);
 
-        // Dictionary to hold combination of words that can be formed,
-        // from any given word. By changing one letter at a time.
-        Map<String, List<String>> allComboDict = new HashMap<>();
-
-        wordList.forEach(word -> {
-            for (int i = 0; i < L; i++) {
-                // Key is the generic word
-                // Value is a list of words which have the same intermediate generic word.
-                String newWord = word.substring(0, i) + '*' + word.substring(i + 1, L);
-                List<String> transformations = allComboDict.getOrDefault(newWord, new ArrayList<>());
-                transformations.add(word);
-                allComboDict.put(newWord, transformations);
+        // 第 3 步：执行双向 BFS，左右交替扩散的步数之和为所求
+        int step = 1;
+        while (!beginVisited.isEmpty() && !endVisited.isEmpty()) {
+            // 优先选择小的哈希表进行扩散，考虑到的情况更少
+            if (beginVisited.size() > endVisited.size()) {
+                Set<String> temp = beginVisited;
+                beginVisited = endVisited;
+                endVisited = temp;
             }
-        });
 
-        // Queue for BFS
-        Queue<Pair<String, Integer>> Q = new LinkedList<>();
-        Q.add(new Pair(beginWord, 1));
+            // 逻辑到这里，保证 beginVisited 是相对较小的集合，nextLevelVisited 在扩散完成以后，会成为新的 beginVisited
+            Set<String> nextLevelVisited = new HashSet<>();
+            for (String word : beginVisited) {
+                if (changeWordEveryOneLetter(word, endVisited, visited, wordSet, nextLevelVisited)) {
+                    return step + 1;
+                }
+            }
 
-        // Visited to make sure we don't repeat processing same word.
-        Map<String, Boolean> visited = new HashMap<>();
-        visited.put(beginWord, true);
+            // 原来的 beginVisited 废弃，从 nextLevelVisited 开始新的双向 BFS
+            beginVisited = nextLevelVisited;
+            step++;
+        }
+        return 0;
+    }
 
-        while (!Q.isEmpty()) {
-            Pair<String, Integer> node = Q.remove();
-            String word = node.getKey();
-            int level = node.getValue();
-            for (int i = 0; i < L; i++) {
 
-                // Intermediate words for current word
-                String newWord = word.substring(0, i) + '*' + word.substring(i + 1, L);
-
-                // Next states are all the words which share the same intermediate state.
-                for (String adjacentWord : allComboDict.getOrDefault(newWord, new ArrayList<>())) {
-                    // If at any point if we find what we are looking for
-                    // i.e. the end word - we can return with the answer.
-                    if (adjacentWord.equals(endWord)) {
-                        return level + 1;
+    /**
+     * 尝试对 word 修改每一个字符，看看是不是能落在 endVisited 中，扩展得到的新的 word 添加到 nextLevelVisited 里
+     *
+     * @param word
+     * @param endVisited
+     * @param visited
+     * @param wordSet
+     * @param nextLevelVisited
+     * @return
+     */
+    private boolean changeWordEveryOneLetter(String word, Set<String> endVisited,
+                                             Set<String> visited,
+                                             Set<String> wordSet,
+                                             Set<String> nextLevelVisited) {
+        char[] charArray = word.toCharArray();
+        for (int i = 0; i < word.length(); i++) {
+            char originChar = charArray[i];
+            for (char c = 'a'; c <= 'z'; c++) {
+                if (originChar == c) {
+                    continue;
+                }
+                charArray[i] = c;
+                String nextWord = String.valueOf(charArray);
+                if (wordSet.contains(nextWord)) {
+                    if (endVisited.contains(nextWord)) {
+                        return true;
                     }
-                    // Otherwise, add it to the BFS Queue. Also mark it visited
-                    if (!visited.containsKey(adjacentWord)) {
-                        visited.put(adjacentWord, true);
-                        Q.add(new Pair(adjacentWord, level + 1));
+                    if (!visited.contains(nextWord)) {
+                        nextLevelVisited.add(nextWord);
+                        visited.add(nextWord);
                     }
                 }
             }
+            // 恢复，下次再用
+            charArray[i] = originChar;
         }
-
-        return 0;
+        return false;
     }
 }
-
 // @lc code=end

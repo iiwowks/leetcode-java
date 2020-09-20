@@ -12,7 +12,7 @@ class Solution {
         if (k == 0 || arr.length == 0) {
             return new int[0];
         }
-        // ⚠️注意最后一个参数传入我们要找的下标（第k小的数下标是k-1）
+        // 注意最后一个参数传入我们要找的下标（第k小的数下标是k-1）
         return quickSearch(arr, 0, arr.length - 1, k - 1);
     }
 

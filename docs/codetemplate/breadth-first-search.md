@@ -1,6 +1,6 @@
 # BFS模板
 
-![algorithm-bfs-queue](/assets/algorithm-bfs-queue.gif)
+![algorithm-bfs-queue](../assets/algorithm-bfs-queue.gif)
 
 {% tabs %}
 {% tab title="Java" %}
@@ -66,4 +66,6 @@ def BFS(root):
 ```
 {% endtab %}
 {% endtabs %}
+
+### two-ended BFS双向BFS
 
