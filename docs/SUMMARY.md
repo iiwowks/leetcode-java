@@ -19,6 +19,6 @@
 
 ## 题集 <a id="problem-list"></a>
 
-* [0-500](problem-list/0-500.md)
-* [500-1000](problem-list/500-1000.md)
-* [1000-1500](problem-list/1000-1500.md)
+* [前500题](problem-list/0-500.md)
+* [第500-1000题](problem-list/500-1000.md)
+* [第1000-1500题](problem-list/1000-1500.md)
