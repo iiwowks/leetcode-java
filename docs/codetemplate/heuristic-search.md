@@ -1,11 +1,15 @@
 # 启发式搜索（A*）模板
 
+* 估价函数：`h(n)`用来评估哪些点是我们最希望的结点
+
+* [1091. 二进制矩阵中的最短路径](https://leetcode-cn.com/problems/shortest-path-in-binary-matrix/)
+* [773. 滑动谜题](https://leetcode-cn.com/problems/sliding-puzzle/)
+* 估价函数：`h(current_point) = dist(current_point, destination_point)`
 * 
-
-
 
 {% tabs %}
 {% tab title="Python" %}
+
 ```python
 def AstarSearch(graph, start, end):
     pq = collections.priority_queue() # 优先级 —> 估价函数
@@ -13,7 +17,7 @@ def AstarSearch(graph, start, end):
     visited.add(start)
 
     while pq:
-        node = pq.pop() # can we add more intelligence here ?
+        node = pq.pop() # add more intelligence here
         visited.add(node)
 
         process(node)
