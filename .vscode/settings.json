@@ -6,7 +6,6 @@
         "**/*.exe": true,
         "**/.gitignore": true,
         "**/LICENSE": true,
-        "**/docs": true,
         "**/.gitbook.yaml": true
     }
 }
