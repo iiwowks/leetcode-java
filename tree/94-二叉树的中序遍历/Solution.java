@@ -2,6 +2,7 @@
  * @lc app=leetcode.cn id=94 lang=java
  *
  * [94] 二叉树的中序遍历
+ * 迭代解法
  */
 
 // @lc code=start
@@ -16,10 +17,10 @@
  */
 class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
-        List<Integer> list = new ArrayList<>();
+        List<Integer> res = new ArrayList<>();
         Stack<TreeNode> stack = new Stack<>();
         
-        if (root == null) return list;
+        if (root == null) return res;
         while (root != null || !stack.isEmpty()) {
             // 将左分支进栈
             while (root != null) {
@@ -28,11 +29,11 @@ class Solution {
             }
             // 从最左下端开始
             root = stack.pop();
-            list.add(root.val);
+            res.add(root.val);
             // 遍历当前节点的右子树
             root = root.right;
         }
-        return list;
+        return res;
     }
 }
 // @lc code=end
