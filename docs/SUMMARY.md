@@ -19,6 +19,5 @@
 
 ## 题集 <a id="problem-list"></a>
 
-* [前500题](problem-list/0-500.md)
-* [第500-1000题](problem-list/500-1000.md)
-* [第1000-1500题](problem-list/1000-1500.md)
+* [力扣题集](../README.md)
+* [lcci](problem-list/lcci.md)
