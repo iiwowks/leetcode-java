@@ -19,5 +19,5 @@
 
 ## 题集 <a id="problem-list"></a>
 
-* [力扣题集](../README.md)
+* [力扣题集](problem-list/leetcode.md)
 * [lcci](problem-list/lcci.md)
