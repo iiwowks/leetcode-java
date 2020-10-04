@@ -36,7 +36,5 @@ class Solution {
         return true;
     }
 }
-
-
 // @lc code=end
 
