@@ -1,5 +1,25 @@
 # 前500题
 
+## 2. Add Two Numbers
+
+* 相加两个以链表形式存储的数字，返回链表形式结果
+
+```java
+while (p != null || q != null) {
+    int x = (p != null) ? p.val : 0;
+    int y = (q != null) ? q.val : 0;
+    int sum = carry + x + y;
+    carry = sum / 10;
+    curr.next = new ListNode(sum % 10);
+    curr = curr.next;
+    if (p != null) p = p.next;
+    if (q != null) q = q.next;
+}
+if (carry > 0) {
+    curr.next = new ListNode(carry);
+}
+```
+
 ## 18. 四数之和
 
 * k 数之和问题都可以转换成：
@@ -142,9 +162,6 @@ if (root != null) {
 }
 ```
 
-## 968. 监控二叉树
-
-
 # 第1000-1500题
 
 ## 1091. 二进制矩阵中的最短路径
@@ -156,6 +173,17 @@ if (root != null) {
 def heuristic(x, y):
     return max(abs(n - 1 - x), abs(n - 1 - y))
 ```
+
+## 1288. Remove Covered Intervals
+
+* 方法一：枚举
+* 方法二：贪心算法：
+  * 对起点进行升序排序，如果起点相同，则对终点进行降序排序。
+  * 初始化没有被覆盖的区间数：count=0。
+  * 迭代排序后的区间并且比较终点大小。
+    * 如果当前区间不被前一个区间覆盖 end > prev_end，则增加 count，指定当前区间为下一步的前一个区间。
+    * 否则，当前区间被前一个区间覆盖，不做任何事情。
+  * 返回 count。
 
 ## 1592. 重新排列单词间的空格
 
