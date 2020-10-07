@@ -4,6 +4,7 @@
 
 ## 模板 <a id="codetemplate"></a>
 
+* [位运算](codetemplate/bit-manipulation.md)
 * [递归模板](codetemplate/recursion.md)
 * [回溯](codetemplate/backtracking.md)
 * [分治模板](codetemplate/partition.md)
