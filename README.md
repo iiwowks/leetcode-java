@@ -106,6 +106,10 @@ if (board[i][j] != '.') {
 * BFS
 * 用一个last指针指向队列中的结点 `last.next = front; last = front;`
 
+## 470. 用 Rand7() 实现 Rand10()
+
+* 
+
 # 第500-1000题
 
 ## 127. 单词接龙
