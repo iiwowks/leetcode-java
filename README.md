@@ -20,6 +20,13 @@ if (carry > 0) {
 }
 ```
 
+## 6. Z 字形变换
+
+* 顺序遍历字符串`s`
+  * 填入字符：`res[index] += c`
+  * 更新行索引：`index += flag`
+  * 到达z字形转折点时，反向：`flag = -flag`
+
 ## 18. 四数之和
 
 * k 数之和问题都可以转换成：
@@ -160,6 +167,26 @@ if (root != null) {
     sum += root.val;
     root.val = sum;
     convertBST(root.left);
+}
+```
+
+## 530. 二叉搜索树的最小绝对差
+
+* 二叉搜索树中序遍历
+
+```java
+private void inOrder(TreeNode root) {
+    if (root == null) {
+        return;
+    }
+    inOrder(root.left);
+    //
+    if (preNode != null) {
+        res = Math.min(Math.abs(root.val - preNode.val), res);
+    }
+    preNode = root;
+    //
+    inOrder(root.right);
 }
 ```
 
