@@ -4,7 +4,7 @@
         "**/.idea": true,
         "**/out": true,
         "**/*.exe": true,
-        "**/.gitignore": true,
+        // "**/.gitignore": true,
         "**/LICENSE": true,
         "**/.gitbook.yaml": true
     }
