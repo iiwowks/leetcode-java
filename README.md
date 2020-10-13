@@ -84,13 +84,6 @@ private ArrayList<List<Integer>> kSum(int[] nums, int target, int k, int index) 
 }
 ```
 
-## 24. 两两交换链表中的节点
-
-* 递归：
-  * `newHead = head.next;`
-  * `newHead = swap(head.next.next);`
-  * `newHead.next = head;`
-
 ## 37. 解数独
 
 ```java
@@ -102,10 +95,6 @@ if (board[i][j] != '.') {
     block[i / 3 * 3 + j / 3][num] = true;
 }
 ```
-
-## 48. 旋转图像
-
-* 翻转矩阵、再每一行转置：可以达到顺时针旋转的效果
 
 ## 51. N 皇后
 
@@ -123,6 +112,7 @@ if (board[i][j] != '.') {
 
 * BFS
 * 用一个last指针指向队列中的结点 `last.next = front; last = front;`
+
 
 # 第500-1000题
 
