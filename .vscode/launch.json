@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "CodeLens (Launch) - javaSolution",
+            "request": "launch",
+            "mainClass": "javaSolution",
+            "projectName": "leetcode-solutions_5e277d5d"
+        },
+        {
             "name": "g++.exe - 生成和调试活动文件",
             "type": "cppdbg",
             "request": "launch",
