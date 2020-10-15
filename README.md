@@ -27,6 +27,12 @@ if (carry > 0) {
   * 更新行索引：`index += flag`
   * 到达z字形转折点时，反向：`flag = -flag`
 
+## 8. 字符串转换整数 (atoi)
+
+1. 去除前导空格
+2. 处理正负号
+3. 判断数字，越界处理
+
 ## 18. 四数之和
 
 * k 数之和问题都可以转换成：
@@ -84,6 +90,11 @@ private ArrayList<List<Integer>> kSum(int[] nums, int target, int k, int index) 
 }
 ```
 
+## 19. 删除链表的倒数第N个节点
+
+* 遍历两次
+* 方法二：双指针，第一个指针先走n + 1步，之后两个指针一起走
+
 ## 24. 两两交换链表中的节点
 
 * 递归：
@@ -119,21 +130,28 @@ if (board[i][j] != '.') {
   * `root.left = helper(index + 1, right)`
   * `root.right = helper(left, index - 1)`
 
+
+
+## 116. 填充每个节点的下一个右侧节点指针
+
+* 层次遍历
+* 方法二：
+  1. 同一父节点的两个结点：`node.left.next = node.right`
+  2. 不同父节点的节点之间：`node.right.next = node.next.left`
+
 ## 117. 填充每个节点的下一个右侧节点指针 II
 
 * BFS
 * 用一个last指针指向队列中的结点 `last.next = front; last = front;`
 
-
-# 第500-1000题
-
 ## 127. 单词接龙
 
 * 双向BFS
 
-```java
 
-```
+
+
+# 第500-1000题
 
 ## 501. 二叉搜索树中的众数
 
