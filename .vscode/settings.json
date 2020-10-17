@@ -6,6 +6,11 @@
         "**/*.exe": true,
         "**/.gitignore": true,
         "**/LICENSE": true,
-        "**/.gitbook.yaml": true
+        "**/.gitbook.yaml": true,
+        "**/.gitpod.yml": true,
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
     }
 }

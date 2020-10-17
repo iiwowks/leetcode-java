@@ -1,4 +1,4 @@
-可以在gitpod中在线编辑：[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/iiwowks/leetcode-solutions)
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/iiwowks/leetcode-solutions)
 
 # 前500题
 
