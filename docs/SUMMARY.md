@@ -17,3 +17,4 @@
 * [数学](codetemplate/math.md)
 * [topK 问题](codetemplate/topk-problem.md)
 * [启发式搜索(A*)](codetemplate/heuristic-search.md)
+* [线段树模板](codetemplate/segment-tree.md)

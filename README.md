@@ -1,4 +1,4 @@
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/iiwowks/leetcode-solutions)
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/iiwowks/leetcode-solutions)  [![Gitbook zuoti](https://img.shields.io/badge/solutions-code--template-blue)](https://1029871348.gitbook.io/zuoti/)
 
 # 前500题
 
@@ -128,6 +128,11 @@ if (board[i][j] != '.') {
 
 * **行、列、对角线** 放置状态存储
 * DFS
+
+## 52. N皇后 II
+
+* 主对角线：**行下标 - 列下标 = 定值**
+* 副对角线：**行下标 + 列下标 = 定值**
 
 ## 106. 从中序与后序遍历序列构造二叉树
 
