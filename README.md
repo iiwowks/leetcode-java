@@ -1,4 +1,4 @@
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/iiwowks/leetcode-solutions)  [![Gitbook zuoti](https://img.shields.io/badge/solutions-code--template-blue)](https://1029871348.gitbook.io/zuoti/)
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/iiwowks/leetcode-solutions)  [![Gitbook zuoti](https://img.shields.io/badge/Gitbook-code--template-blue)](https://1029871348.gitbook.io/zuoti/)
 
 # 前500题
 
@@ -34,6 +34,13 @@ if (carry > 0) {
 1. 去除前导空格
 2. 处理正负号
 3. 判断数字，越界处理
+
+## 12. 整数转罗马数字
+
+* 把阿拉伯数字与罗马数字可能出现的所有情况和对应关系，放在两个数组中
+* 按照阿拉伯数字的大小降序排列，贪心选择思想
+* `int[] nums = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};`
+* `String[] romans = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};`
 
 ## 18. 四数之和
 
@@ -106,7 +113,35 @@ private ArrayList<List<Integer>> kSum(int[] nums, int target, int k, int index) 
 
 ## 29. 两数相除
 
+```java
+public int divide(int A, int B) {
+    if (A == 1 << 31 && B == -1) return (1 << 31) - 1;
+    int a = Math.abs(A), b = Math.abs(B), res = 0;
 
+    for (int x = 31; x >= 0; x--) {
+        // a 无符号右移x位
+        if ((a >>> x) - b >= 0) {
+            res += 1 << x;
+            a -= b << x;
+        }
+    }
+    return (A > 0) == (B > 0) ? res : -res;
+}
+```
+
+## 31. 下一个排列
+
+* 自右向左扫描，交换降序序列中的第一个逆序对
+
+```java
+    while(i >= 0 && A[i] >= A[i + 1]) i--; // Find 1st id i that breaks descending order
+    if(i >= 0) {                           // If not entirely descending
+        int j = A.length - 1;              // Start from the end
+        while(A[j] <= A[i]) j--;           // Find rightmost first larger id j
+        swap(A, i, j);                     // Switch i and j
+    }
+    reverse(A, i + 1, A.length - 1);       // Reverse the descending sequence
+```
 
 ## 37. 解数独
 
@@ -159,8 +194,9 @@ if (board[i][j] != '.') {
 
 * 双向BFS
 
+## 143. 重排链表
 
-
+* 将链表结点依次存入list，双指针
 
 # 第500-1000题
 
@@ -230,15 +266,31 @@ private void inOrder(TreeNode root) {
 }
 ```
 
+## 925. 长按键入
+
+* 双指针：
+
+```java
+int i = 0, j = 0;
+while (j < typed.length()) {
+    if (i < name.length() && name.charAt(i)== typed.charAt(j)) {
+        i++;
+        j++;
+    } else if (j > 0 && typed.charAt(j) == typed.charAt(j - 1)) {
+        j++;
+    } else {
+        return false;
+    }
+}
+return i == name.length();
+```
+
+
 # 第1000-1500题
-
-
 
 ## 1002. 查找常用字符
 
 * 计数： $minfreq[c]$ 统计每一个字符在每个字符串中出现的最小频次
-
-
 
 ## 1091. 二进制矩阵中的最短路径
 
