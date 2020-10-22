@@ -8,7 +8,6 @@
 
 // @lc code=start
 class Solution {
-
     public int mySqrt(int a) {
         long x = a;
         while (x * x > a) {

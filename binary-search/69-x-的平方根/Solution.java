@@ -26,6 +26,4 @@ class Solution {
         return (int)left;
     }
 }
-
-
 // @lc code=end
