@@ -48,57 +48,6 @@ if (carry > 0) {
   * 两数之和问题（使用双指针）
   * k - 1 数之和问题
 
-```java
-private ArrayList<List<Integer>> kSum(int[] nums, int target, int k, int index) {
-    ArrayList<List<Integer>> res = new ArrayList<List<Integer>>();
-    if (index >= len) {
-        return res;
-    }
-    if (k == 2) {
-        int i = index, j = len - 1;
-        while (i < j) {
-            // find a pair
-            if (target - nums[i] == nums[j]) {
-                List<Integer> temp = new ArrayList<>();
-                temp.add(nums[i]);
-                temp.add(target - nums[i]);
-                res.add(temp);
-                // skip duplication
-                while (i < j && nums[i] == nums[i + 1])
-                    i++;
-                while (i < j && nums[j - 1] == nums[j])
-                    j--;
-                i++;
-                j--;
-                // move left bound
-            } else if (target - nums[i] > nums[j]) {
-                i++;
-                // move right bound
-            } else {
-                j--;
-            }
-        }
-    } else {
-        for (int i = index; i < len - k + 1; i++) {
-            // use current number to reduce ksum into k-1sum
-            ArrayList<List<Integer>> temp = kSum(nums, target - nums[i], k - 1, i + 1);
-            if (temp != null) {
-                // add previous results
-                for (List<Integer> t : temp) {
-                    t.add(0, nums[i]);
-                }
-                res.addAll(temp);
-            }
-            while (i < len - 1 && nums[i] == nums[i + 1]) {
-                // skip duplicated numbers
-                i++;
-            }
-        }
-    }
-    return res;
-}
-```
-
 ## 19. 删除链表的倒数第N个节点
 
 * 遍历两次
@@ -198,6 +147,10 @@ if (board[i][j] != '.') {
 
 * 将链表结点依次存入list，双指针
 
+## 429. n叉树的层序遍历
+
+* BFS
+
 # 第500-1000题
 
 ## 501. 二叉搜索树中的众数
@@ -266,9 +219,16 @@ private void inOrder(TreeNode root) {
 }
 ```
 
+## 763. 划分字母区间
+
+1. 遍历字符串，维护当前片段下标`start`, `end`
+2. 对于每一个字母 `c`，找到其最后出现的下标`end_c`，`end = max(end, end_c)`
+3. 访问到 `end`时，结束当前片段， `start = end + 1`
+4. 重复以上步骤，直至遍历完整个字符串
+
 ## 925. 长按键入
 
-* 双指针：
+* 双指针
 
 ```java
 int i = 0, j = 0;
