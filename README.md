@@ -19,6 +19,9 @@ if (carry > 0) {
     curr.next = new ListNode(carry);
 }
 ```
+## 4. Merge Sorted Array
+* 方法一：合并两个数组，直接返回中位数
+* 方法二：二分查找
 ## 6. ZigZag Conversion
 * 顺序遍历字符串`s`
   * 填入字符：`res[index] += c`
@@ -41,6 +44,21 @@ if (carry > 0) {
 * 遍历两次
 * 方法二：双指针，第一个指针**先走n + 1步**，之后两个指针一起走
 ## 22. Generate Parentheses
+* 回溯
+```java
+public void backtrack(List<String> list, String str, int open, int close, int max) {
+    if (str.length() == max * 2) {
+        list.add(str);
+        return;
+    }
+    if (open < max) {
+        backtrack(list, str + "(", open + 1, close, max);
+    }
+    if (close < open) {
+        backtrack(list, str + ")", open, close + 1, max);
+    }
+}
+```
 ## 23. Merge k Sorted Lists
 * 实现小根堆：`Queue<ListNode> pq = new PriorityQueue<>((v1, v2) -> v1.val - v2.val);`
 ## 24. Swap Nodes in Pairs
@@ -93,13 +111,13 @@ if (board[i][j] != '.') {
 ## 52. N-Queens II
 * 主对角线：**行下标 - 列下标 = 定值**
 * 副对角线：**行下标 + 列下标 = 定值**
-## 106. 从中序与后序遍历序列构造二叉树
+## 106. Construct Binary Tree from Inorder and Postorder Traversal
 * 后序遍历序列的`final index`，将中序遍历序列分成左右子树，依次递推
 * `helper(int left, int right)`
   * `root.left = helper(index + 1, right)`
   * `root.right = helper(left, index - 1)`
 ## 109. Convert Sorted List to Binary Search Tree
-
+* 快慢指针，寻找中位数做父节点，递归
 ## 116. Populating Next Right Pointers in Each Node
 * 层次遍历
 * 方法二：
@@ -180,6 +198,8 @@ if (root != null) {
 4. 重复以上步骤，直至遍历完整个字符串
 ## 799. Champagne Tower
 * 模拟
+  * 流入一个杯子总共 `x`, 流入下两个杯子各 `(x - 1.0) / 2.0`
+  * 两层循环递推
 ## 925. Long Pressed Name
 * 双指针
 ```java
