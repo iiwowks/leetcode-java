@@ -31,6 +31,15 @@ if (carry > 0) {
 1. 去除前导空格
 2. 处理正负号
 3. 判断数字，越界处理
+## 9. Palindrome Number
+* 只判断数字x右半边的反转是否与前半边相同
+```java
+int rev = 0;
+while (x > rev) {
+    rev = rev * 10 + x % 10;
+    x /= 10;
+}
+```
 ## 12. Integer to Roman
 * 把阿拉伯数字与罗马数字可能出现的所有情况和对应关系，放在两个数组中
 * 按照阿拉伯数字的大小降序排列，贪心选择思想
@@ -43,6 +52,8 @@ if (carry > 0) {
 ## 19. Remove Nth Node From End of List
 * 遍历两次
 * 方法二：双指针，第一个指针**先走n + 1步**，之后两个指针一起走
+## 20. Valid Parentheses
+* 
 ## 22. Generate Parentheses
 * 回溯
 ```java
@@ -93,6 +104,8 @@ public int divide(int A, int B) {
     }
     reverse(A, i + 1, A.length - 1);       // Reverse the descending sequence
 ```
+## 33. Search in Rotated Sorted Array
+* 相当于二分查找；如果中间的数小于最右边的数，右半段是有序的；大于最右边的数，左半段是有序的。
 ## 37. Sudoku Solver
 ```java
 if (board[i][j] != '.') {
@@ -130,6 +143,8 @@ if (board[i][j] != '.') {
 * 双向BFS
 ## 143. Reorder List
 * 将链表结点依次存入list，双指针
+## 228. Summary Ranges
+* `i，j`拓展数组，连续范围：`nums[j + 1] == nums[j] + 1`
 ## 429. N-ary Tree Level Order Traversal
 * BFS
 
@@ -191,6 +206,11 @@ if (root != null) {
     convertBST(root.left);
 }
 ```
+## 673. Number of Longest Increasing Subsequence
+* 假设对于以 `nums[i]` 结尾的序列，我们知道最长序列的长度 `length[i]`，以及具有该长度的序列的 `count[i]`。
+* 对于每一个 `i < j` 和一个 `A[i] < A[j]`，我们可以将一个 `A[j]` 附加到以 `A[i]` 结尾的最长子序列上。
+* 如果这些序列比 `length[j]` 长，那么我们就知道我们有`count[i]` 个长度为 length 的序列。如果这些序列的长度与 `length[j]` 相等，那么我们就知道现在有 `count[i]` 个额外的序列（即 `count[j]+=count[i]`）。
+
 ## 763. Partition Labels
 1. 遍历字符串，维护当前片段下标`start`, `end`
 2. 对于每一个字母 `c`，找到其最后出现的下标`end_c`，`end = max(end, end_c)`
