@@ -1,7 +1,7 @@
 # sort
 
 ## 快速排序
-![image-quickSort](../assets/quickSort.gif)
+![image-quickSort](https://assets.leetcode-cn.com/solution-static/912_fig1.gif)
 ```python
 from typing import List
 
@@ -33,6 +33,7 @@ class Solution:
 ```
 
 ## 归并排序
+![image](https://pic.leetcode-cn.com/6cd459ced71fa1f899e547c2ebbd4c51b19258e983f7bee38ef068fa81c6a863-849589-20171015230557043-37375010.gif)
 ```python
 from typing import List
 
@@ -77,6 +78,7 @@ class Solution:
 ```
 
 ## 选择排序
+![image](https://pic.leetcode-cn.com/3b5a9383650b7ba01211846defeda8917d78827f02132113c57fcbd09715bf4b-849589-20171015224719590-1433219824.gif)
 ```python
 from typing import List
 
@@ -94,7 +96,7 @@ class Solution:
 ```
 
 ## 插入排序
-![](../assets/insertionSort.png)
+![](https://pic.leetcode-cn.com/bc80b45fb9b68f86b62b9fb968a377d8dbee807a5e54a9276cb684648663181f-849589-20171015225645277-1151100000.gif)
 ```python
 from typing import List
 
