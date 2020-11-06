@@ -1,7 +1,5 @@
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/iiwowks/leetcode-solutions)  [![Gitbook zuoti](https://img.shields.io/badge/Gitbook-code--template-blue)](https://1029871348.gitbook.io/zuoti/) [![Leetcode profile](https://img.shields.io/badge/Leetcode-my--profile-blue)](https://leetcode.com/zhengjunan/)
 
-# 前500题
-
 ## 2. Add Two Numbers
 * 相加两个以链表形式存储的数字，返回链表形式结果
 ```java
@@ -145,10 +143,11 @@ if (board[i][j] != '.') {
 * 将链表结点依次存入list，双指针
 ## 228. Summary Ranges
 * `i，j`拓展数组，连续范围：`nums[j + 1] == nums[j] + 1`
+## 310. Minimum Height Trees
+* `0 ~ n - 1`标号的节点中：找到所有头节点，使得以这个节点为root的树，高度最小。
+* 相当于把一个图，从外向里，每次循环 ‘剥去一层’
 ## 429. N-ary Tree Level Order Traversal
 * BFS
-
-# 第500-1000题
 ## 501. Find Mode in Binary Search Tree
 * 二叉搜索树中序遍历，在递增的序列中，寻找频率最高的元素
 * 中序遍历中：使用递归回溯、或者栈实现中序遍历
@@ -209,8 +208,7 @@ if (root != null) {
 ## 673. Number of Longest Increasing Subsequence
 * 假设对于以 `nums[i]` 结尾的序列，我们知道最长序列的长度 `length[i]`，以及具有该长度的序列的 `count[i]`。
 * 对于每一个 `i < j` 和一个 `A[i] < A[j]`，我们可以将一个 `A[j]` 附加到以 `A[i]` 结尾的最长子序列上。
-* 如果这些序列比 `length[j]` 长，那么我们就知道我们有`count[i]` 个长度为 length 的序列。如果这些序列的长度与 `length[j]` 相等，那么我们就知道现在有 `count[i]` 个额外的序列（即 `count[j]+=count[i]`）。
-
+* 如果这些序列比 `length[j]` 长，那么我们就知道我们有`count[i]` 个长度为 length 的序列。如果这些序列的长度与 `length[j]` 相等，那么我们就知道现在有 `count[i]` 个额外的序列（即 `count[j]+=count[i]`）
 ## 763. Partition Labels
 1. 遍历字符串，维护当前片段下标`start`, `end`
 2. 对于每一个字母 `c`，找到其最后出现的下标`end_c`，`end = max(end, end_c)`
@@ -236,8 +234,6 @@ while (j < typed.length()) {
 }
 return i == name.length();
 ```
-
-# 第1000-1500题
 ## 1002. Find Common Characters
 * 计数： $minfreq[c]$ 统计每一个字符在每个字符串中出现的最小频次
 ## 1091. Shortest Path in Binary Matrix
