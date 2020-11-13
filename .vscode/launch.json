@@ -9,28 +9,7 @@
             "name": "CodeLens (Launch) - javaSolution",
             "request": "launch",
             "mainClass": "javaSolution",
-            "projectName": "leetcode-solutions_5e277d5d"
-        },
-        {
-            "name": "g++.exe - 生成和调试活动文件",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "gdb",
-            "miDebuggerPath": "C:\\mingw64\\bin\\gdb.exe",
-            "setupCommands": [
-                {
-                    "description": "为 gdb 启用整齐打印",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "preLaunchTask": "C/C++: g++.exe build active file"
+            "projectName": "leetcode-solutions_8bfeb3e"
         }
     ]
 }
