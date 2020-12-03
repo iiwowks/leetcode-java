@@ -1,3 +1,4 @@
 .idea
 out
 *.exe
+.DS_Store

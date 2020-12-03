@@ -5,20 +5,21 @@
  */
 
 // @lc code=start
-// 方法一：排序
-// 两个字符串排序后产生如果相等
-class Solution {
+// 方法2: 哈希 + 计数
+class Solution2 {
     public boolean isAnagram(String s, String t) {
-        if (s.length() != t.length()) {
-            return false;
+        Map<Character, Integer> map = new HashMap<>();
+        for (Character chars : s.toCharArray()) {
+            map.put(chars, map.getOrDefault(chars, 0) + 1);
         }
-        char[] str1 = s.toCharArray();
-        char[] str2 = t.toCharArray();
-        Arrays.sort(str1);
-        Arrays.sort(str2);
-        return Arrays.equals(str1, str2);
+        for (Character chart : t.toCharArray()) {
+            map.put(chart, map.getOrDefault(chart, 0) - 1);
+        }
+        for (Map.Entry<Character, Integer> entry : map.entrySet()) {
+            if (entry.getValue() != 0) return false;
+        }
+        return true;
     }
-
 }
 // @lc code=end
 
