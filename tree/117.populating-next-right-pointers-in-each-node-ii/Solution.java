@@ -27,7 +27,6 @@ class Node {
     }
 };
 */
-
 class Solution {
     public Node connect(Node root) {
         if (root == null) {
@@ -35,21 +34,24 @@ class Solution {
         }
         Queue<Node> queue = new LinkedList<>();
         queue.offer(root);
-        while(!queue.isEmpty()) {
-            int level = queue.size();
+        // 层次遍历的话，使用队列
+        while (!queue.isEmpty()) {
+            int length = queue.size();
             Node last = null;
-            for (int i = 1; i <= level; i++) {
-                Node f = queue.poll();
-                if (f.left != null) {
-                    queue.offer(f.left);
-                }                
-                if (f.right != null) {
-                    queue.offer(f.right);
+
+            // 对于每一层
+            for (int i = 0; i < length; i++) {
+                Node temp = queue.poll();
+                if (temp.left != null) {
+                    queue.offer(temp.left);
                 }
-                if (i != 1) {
-                    last.next = f;
+                if (temp.right != null) {
+                    queue.offer(temp.right);
                 }
-                last = f;
+                if (i != 0) {
+                    last.next = temp; // 到最后的时候，queue.poll()是 null
+                }
+                last = temp;
             }
         }
         return root;
