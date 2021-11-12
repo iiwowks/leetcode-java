@@ -13,5 +13,16 @@
         "**/.settings": true,
         "**/.factorypath": true
     },
-    "python.pythonPath": "/usr/bin/python"
+    "python.pythonPath": "/usr/bin/python",
+    // 用来配置源代码文件存放目录及文件名
+    "leetcode.filePath": {
+        "default": {
+            "folder": "",
+            "filename": "${id}.${kebab-case-name}.${ext}"
+        },
+        "java": {
+            "folder": "${tag}",
+            "filename": "${id}-${kebab-case-name}.${ext}"
+        }
+    }
 }
