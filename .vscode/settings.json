@@ -22,7 +22,7 @@
         },
         "java": {
             "folder": "${tag}",
-            "filename": "${id}-${kebab-case-name}.${ext}"
+            "filename": "${id}.${kebab-case-name}.${ext}"
         }
     }
 }
