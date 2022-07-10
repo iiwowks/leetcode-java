@@ -25,7 +25,6 @@ void BFS()
 
 {% tabs %}
 {% tab title="Java" %}
-
 ```java
 // 写法一：
 public void bfs(TreeNode root) {
@@ -89,5 +88,4 @@ def BFS(root):
 {% endtab %}
 {% endtabs %}
 
-### two-ended BFS双向BFS
-
+## two-ended BFS双向BFS

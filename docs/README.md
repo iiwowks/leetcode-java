@@ -12,10 +12,6 @@
 * [x] 做题时**注释**很重要，尽量多写注释
 * [x] 不要太重视解题代码，**解题的思路才是关键**
 
-## 目标
-
-* [ ] **2020年 solve 500 道题，提交2000次**
-
 ## 环境
 
 * `VSCode`编辑器 + `leetcode`插件
@@ -24,7 +20,7 @@
 * `python` ：`python`插件、`python 3.8.1`
 * `leetcode`其中的`setting.json`文件的一部分配置
 
-```json
+```javascript
 // 用来配置源代码文件存放目录及文件名
 "leetcode.filePath": {
     "default": {
